@@ -1,0 +1,269 @@
+$neutral-colors: (
+  grayishblue: hsl(233, 8%, 62%),
+  lightgrayishblue: hsl(220, 16%, 96%),
+  verylightgray: hsl(0, 0%, 98%)
+);
+
+$primary-colors: (
+  darkblue: hsl(233, 26%, 24%),
+  limegreen: hsl(136, 65%, 51%),
+  brightcyan: hsl(192, 70%, 51%)
+);
+
+.site-header {
+  //   position: relative;
+  .container {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    justify-content: space-between;
+    // border: 1px solid blue;
+    .cta {
+      display: none;
+    }
+  }
+
+  .site-nav {
+    // height: 0;
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    width: 80%;
+    margin: 1rem auto;
+    border-radius: 5px;
+    padding: 1em 0;
+  }
+
+  .nav-item a {
+    text-decoration: none;
+    color: map-get($primary-colors, darkblue);
+    font-size: 0.9rem;
+    font-weight: 400;
+    display: block;
+    width: 100%;
+    padding: 1em 0;
+    text-align: center;
+  }
+
+  .hamburger-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.hero-section {
+  padding-top: 22rem;
+  background-image: url("./../images/image-mockups.png"),
+    url("./../images/bg-intro-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center -8.5rem, center top;
+}
+
+.hero-content {
+  // background-color: map-get($neutral-colors, verylightgray);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 375px));
+  justify-content: center;
+  text-align: center;
+  padding: 3em;
+  gap: 1em;
+
+  .main-heading {
+    color: map-get($primary-colors, darkblue);
+    font-weight: 300;
+    font-size: 2rem;
+    // margin-bottom: 0.35em;
+  }
+
+  .hero-desc {
+    color: map-get($neutral-colors, grayishblue);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    // margin-bottom: 0.35rem;
+  }
+
+  .cta {
+    justify-self: center;
+    color: #fff;
+  }
+}
+
+.services {
+  background-color: map-get($neutral-colors, verylightgray);
+}
+
+.pitch-intro {
+  padding: 4em 0;
+}
+
+.pitch-intro > * {
+  max-width: 375px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pitch-title {
+  font-size: 1.55rem;
+  margin-bottom: 0.5em;
+  font-weight: 300;
+  color: map-get($primary-colors, darkblue);
+}
+
+%mainbodytext {
+  color: map-get($neutral-colors, grayishblue);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.pitch-desc {
+  @extend %mainbodytext;
+}
+
+.features {
+  display: grid;
+  gap: 2em;
+  justify-items: center;
+}
+
+.feature {
+  // border: 2px solid blue;
+  max-width: 375px;
+  display: grid;
+  gap: 1.5em;
+  justify-items: center;
+  text-align: center;
+}
+
+.feature-title {
+  color: map-get($primary-colors, darkblue);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.feature-desc {
+  @extend %mainbodytext;
+}
+
+.articles {
+  padding: 4em 1em;
+}
+
+.articles-title {
+  @extend .pitch-title;
+  margin-bottom: 1.2em;
+  text-align: center;
+}
+
+.article {
+  max-width: 375px;
+  margin: 0 auto;
+
+  &-img {
+    width: 100%;
+  }
+
+  .wrapper {
+    padding: 1.3em 1.3em 2em;
+  }
+
+  .author-name {
+    color: map-get($neutral-colors, grayishblue);
+    font-size: 0.7rem;
+  }
+
+  .article-title {
+    margin: 0.7em 0;
+  }
+
+  .article-link {
+    color: map-get($primary-colors, darkblue);
+    font-weight: 300;
+    text-decoration: none;
+    margin-bottom: 1em;
+  }
+
+  .article-summary {
+    @extend %mainbodytext;
+  }
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+}
+
+.article:not(:last-child) {
+  margin-bottom: 2em;
+}
+
+.site-footer {
+  background-color: map-get($primary-colors, darkblue);
+  display: grid;
+  justify-items: center;
+  padding: 3rem 0;
+
+  .container {
+    display: inherit;
+    gap: 1.5rem;
+    justify-items: center;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  font-size: 1.45rem;
+
+  .social-item:not(:last-child) {
+    margin-right: 1em;
+  }
+}
+
+.footer-nav {
+  .nav-item {
+    text-align: center;
+    padding-bottom: 0.8em;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    font-size: 0.8rem;
+  }
+}
+
+.copyright {
+  color: map-get($neutral-colors, grayishblue) !important;
+}
+
+.cta {
+  display: block;
+  padding: 0.9em 2em;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background-image: linear-gradient(
+    to bottom right,
+    map-get($primary-colors, limegreen),
+    map-get($primary-colors, brightcyan)
+  );
+}
