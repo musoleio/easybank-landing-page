@@ -10,11 +10,6 @@ $primary-colors: (
   brightcyan: hsl(192, 70%, 51%)
 );
 
-body {
-  max-width: 375px;
-  margin: 0 auto;
-}
-
 .site-header {
   //   position: relative;
   .container {
@@ -71,7 +66,7 @@ body {
     display: block;
     width: 50px;
     height: 50px;
-    background-image: url("./../images/icon-hamburger.svg");
+    background-image: url("/images/icon-hamburger.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-color: transparent;
@@ -83,7 +78,7 @@ body {
     display: block;
 
     & ~ .hamburger-menu {
-      background-image: url("./../images/icon-close.svg");
+      background-image: url("/images/icon-close.svg");
     }
   }
 }
