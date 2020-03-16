@@ -13,11 +13,17 @@ body {
 }
 
 .site-header .container {
-  padding: 1.5rem;
   display: flex;
-  align-items: center;
   height: 10vh;
+  width: 100%;
+  padding: 1.5rem;
   justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.979);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
 .site-header .container .cta {
@@ -25,8 +31,9 @@ body {
 }
 
 .site-header .site-nav {
+  height: 90%;
   display: none;
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -56,9 +63,22 @@ body {
 }
 
 .site-header .hamburger-menu {
-  background: none;
-  border: none;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: url("./../images/icon-hamburger.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
   cursor: pointer;
+}
+
+.site-header .nav-open {
+  display: block;
+}
+
+.site-header .nav-open ~ .hamburger-menu {
+  background-image: url("./../images/icon-close.svg");
 }
 
 .hero-section {

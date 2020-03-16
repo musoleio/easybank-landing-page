@@ -13,21 +13,27 @@ $primary-colors: (
 .site-header {
   //   position: relative;
   .container {
-    padding: 1.5rem;
     display: flex;
-    align-items: center;
     height: 10vh;
+    width: 100%;
+    padding: 1.5rem;
     justify-content: space-between;
-    // border: 1px solid blue;
+    align-items: center;
+    background-color: rgba(#fff, 0.979);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+
     .cta {
       display: none;
     }
   }
 
   .site-nav {
-    // height: 0;
+    height: 90%;
     display: none;
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -57,9 +63,23 @@ $primary-colors: (
   }
 
   .hamburger-menu {
-    background: none;
-    border: none;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-image: url("./../images/icon-hamburger.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    // border: none;
     cursor: pointer;
+  }
+
+  .nav-open {
+    display: block;
+
+    & ~ .hamburger-menu {
+      background-image: url("./../images/icon-close.svg");
+    }
   }
 }
 
