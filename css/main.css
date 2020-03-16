@@ -23,7 +23,7 @@ body {
   position: fixed;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
 }
 
 .site-header .container .cta {
@@ -70,6 +70,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-color: transparent;
+  border: none;
   cursor: pointer;
 }
 
