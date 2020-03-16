@@ -12,6 +12,11 @@ body {
   font-family: "Public Sans", sans-serif;
 }
 
+body {
+  max-width: 375px;
+  margin: 0 auto;
+}
+
 .site-header .container {
   display: flex;
   height: 10vh;

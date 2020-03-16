@@ -10,6 +10,11 @@ $primary-colors: (
   brightcyan: hsl(192, 70%, 51%)
 );
 
+body {
+  max-width: 375px;
+  margin: 0 auto;
+}
+
 .site-header {
   //   position: relative;
   .container {
