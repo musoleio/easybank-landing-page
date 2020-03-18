@@ -1,0 +1,147 @@
+@mixin desktop($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+.site-header {
+  @include desktop(768px) {
+    .container {
+      padding: 0 6%;
+      .cta {
+        display: initial;
+        color: #fff;
+      }
+    }
+
+    .site-nav {
+      all: unset;
+      flex-basis: 40%;
+    }
+
+    .nav-links {
+      all: unset;
+      list-style: none;
+      width: unset;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .hamburger-menu {
+      display: none;
+    }
+  }
+}
+
+.hero-section {
+  @include desktop(768px) {
+    display: flex;
+
+    .hero-image-container {
+      order: 2;
+      .hero-image {
+        position: relative;
+        background-image: url("./../images/bg-intro-desktop.svg");
+        background-position: 1rem top;
+        background-size: cover;
+      }
+    }
+
+    .hero-content {
+      grid-template-columns: 375px;
+      order: 1;
+      align-self: center;
+    }
+  }
+}
+
+.services {
+  @include desktop(768px) {
+    padding: 4em 8%;
+  }
+}
+
+.pitch-intro {
+  @include desktop(768px) {
+    padding: 0;
+    margin-bottom: 2em;
+    & > * {
+      text-align: left;
+      max-width: initial;
+    }
+  }
+}
+
+.features {
+  @include desktop(768px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    .feature {
+      padding: 0;
+      justify-items: initial;
+      text-align: initial;
+    }
+  }
+}
+
+.articles {
+  @include desktop(768px) {
+    padding: 4em 8%;
+
+    &-title {
+      text-align: left;
+    }
+
+    &-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1em;
+    }
+  }
+}
+
+.site-footer {
+  @include desktop(768px) {
+    padding: 3rem 8%;
+    .container {
+      place-items: start;
+      grid-template-areas:
+        "logo nav nav cta"
+        "social nav nav copy";
+
+      .footer-logo {
+        grid-area: logo;
+      }
+
+      .social-links {
+        grid-area: social;
+      }
+
+      .footer-nav {
+        grid-area: nav;
+        justify-self: stretch;
+      }
+
+      .nav-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-item {
+        text-align: left;
+      }
+
+      .cta {
+        grid-area: cta;
+        justify-self: end;
+      }
+
+      .copyright {
+        grid-area: copy;
+        justify-self: end;
+      }
+    }
+  }
+}

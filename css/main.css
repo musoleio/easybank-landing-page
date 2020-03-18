@@ -83,21 +83,28 @@ body {
   background-image: url("./../images/icon-close.svg");
 }
 
-.hero-section {
-  padding-top: 22rem;
-  background-image: url("./../images/image-mockups.png"), url("./../images/bg-intro-mobile.svg");
+.hero-image-container {
+  position: relative;
+}
+
+.hero-image-container .hero-image {
+  width: 100%;
+  background-image: url("./../images/bg-intro-mobile.svg");
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: center -8.5rem, center top;
+  background-position: center;
 }
 
 .hero-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(auto, 375px));
   justify-content: center;
   text-align: center;
   padding: 3em 1em;
   gap: 1em;
+}
+
+.hero-content > * {
+  max-width: 375px;
 }
 
 .hero-content .main-heading {
@@ -119,10 +126,11 @@ body {
 
 .services {
   background-color: #fafafa;
+  padding: 4em 0;
 }
 
 .pitch-intro {
-  padding: 4em 1em;
+  padding: 0 1em;
 }
 
 .pitch-intro > * {
@@ -152,9 +160,6 @@ body {
 
 .feature {
   max-width: 375px;
-  display: grid;
-  gap: 1.5em;
-  justify-items: center;
   text-align: center;
   padding: 0 1em;
 }
@@ -163,6 +168,7 @@ body {
   color: #2d314d;
   font-size: 1rem;
   font-weight: 300;
+  margin: 1.5em 0;
 }
 
 .articles {
@@ -211,15 +217,13 @@ body {
 
 .site-footer {
   background-color: #2d314d;
-  display: grid;
-  justify-items: center;
   padding: 3rem 0;
 }
 
 .site-footer .container {
-  display: inherit;
+  display: grid;
   gap: 1.5rem;
-  justify-items: center;
+  place-items: center;
 }
 
 .site-footer a {
@@ -263,5 +267,128 @@ body {
   font-size: 0.8rem;
   font-weight: 700;
   background-image: linear-gradient(to bottom right, #31d35c, #2bb7da);
+}
+
+@media screen and (min-width: 768px) {
+  .site-header .container {
+    padding: 0 6%;
+  }
+  .site-header .container .cta {
+    display: initial;
+    color: #fff;
+  }
+  .site-header .site-nav {
+    all: unset;
+    flex-basis: 40%;
+  }
+  .site-header .nav-links {
+    all: unset;
+    list-style: none;
+    width: unset;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .site-header .hamburger-menu {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero-section {
+    display: flex;
+  }
+  .hero-section .hero-image-container {
+    order: 2;
+  }
+  .hero-section .hero-image-container .hero-image {
+    position: relative;
+    background-image: url("./../images/bg-intro-desktop.svg");
+    background-position: 1rem top;
+    background-size: cover;
+  }
+  .hero-section .hero-content {
+    grid-template-columns: 375px;
+    order: 1;
+    align-self: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .services {
+    padding: 4em 8%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pitch-intro {
+    padding: 0;
+    margin-bottom: 2em;
+  }
+  .pitch-intro > * {
+    text-align: left;
+    max-width: initial;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .features {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .features .feature {
+    padding: 0;
+    justify-items: initial;
+    text-align: initial;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .articles {
+    padding: 4em 8%;
+  }
+  .articles-title {
+    text-align: left;
+  }
+  .articles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 1em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .site-footer {
+    padding: 3rem 8%;
+  }
+  .site-footer .container {
+    place-items: start;
+    grid-template-areas: "logo nav nav cta" "social nav nav copy";
+  }
+  .site-footer .container .footer-logo {
+    grid-area: logo;
+  }
+  .site-footer .container .social-links {
+    grid-area: social;
+  }
+  .site-footer .container .footer-nav {
+    grid-area: nav;
+    justify-self: stretch;
+  }
+  .site-footer .container .nav-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .site-footer .container .nav-item {
+    text-align: left;
+  }
+  .site-footer .container .cta {
+    grid-area: cta;
+    justify-self: end;
+  }
+  .site-footer .container .copyright {
+    grid-area: copy;
+    justify-self: end;
+  }
 }
 /*# sourceMappingURL=main.css.map */

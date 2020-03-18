@@ -83,19 +83,24 @@ $primary-colors: (
   }
 }
 
-.hero-section {
-  padding-top: 22rem;
-  background-image: url("./../images/image-mockups.png"),
-    url("./../images/bg-intro-mobile.svg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center -8.5rem, center top;
+.hero-image-container {
+  position: relative;
+
+  .hero-image {
+    width: 100%;
+    background-image: url("./../images/bg-intro-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+  }
 }
 
 .hero-content {
-  // background-color: map-get($neutral-colors, verylightgray);
+  & > * {
+    max-width: 375px;
+  }
+
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(auto, 375px));
   justify-content: center;
   text-align: center;
   padding: 3em 1em;
@@ -123,10 +128,11 @@ $primary-colors: (
 
 .services {
   background-color: map-get($neutral-colors, verylightgray);
+  padding: 4em 0;
 }
 
 .pitch-intro {
-  padding: 4em 1em;
+  padding: 0 1em;
 }
 
 .pitch-intro > * {
@@ -159,11 +165,7 @@ $primary-colors: (
 }
 
 .feature {
-  // border: 2px solid blue;
   max-width: 375px;
-  display: grid;
-  gap: 1.5em;
-  justify-items: center;
   text-align: center;
   padding: 0 1em;
 }
@@ -172,6 +174,7 @@ $primary-colors: (
   color: map-get($primary-colors, darkblue);
   font-size: 1rem;
   font-weight: 300;
+  margin: 1.5em 0;
 }
 
 .feature-desc {
@@ -191,6 +194,8 @@ $primary-colors: (
 .article {
   max-width: 375px;
   margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
 
   &-img {
     width: 100%;
@@ -219,8 +224,6 @@ $primary-colors: (
   .article-summary {
     @extend %mainbodytext;
   }
-  border-radius: 5px;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
 }
 
 .article:not(:last-child) {
@@ -229,14 +232,12 @@ $primary-colors: (
 
 .site-footer {
   background-color: map-get($primary-colors, darkblue);
-  display: grid;
-  justify-items: center;
   padding: 3rem 0;
 
   .container {
-    display: inherit;
+    display: grid;
     gap: 1.5rem;
-    justify-items: center;
+    place-items: center;
   }
 
   a {
