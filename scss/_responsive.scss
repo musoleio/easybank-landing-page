@@ -35,24 +35,38 @@
   }
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .hero-section {
   @include desktop(768px) {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 8rem 8%;
+    margin-top: 10vh;
+    background-image: url("./../images/bg-intro-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 35rem -15rem;
+    position: relative;
 
     .hero-image-container {
       order: 2;
-      .hero-image {
-        position: relative;
-        background-image: url("./../images/bg-intro-desktop.svg");
-        background-position: 1rem top;
-        background-size: cover;
-      }
     }
 
+    .hero-image {
+      position: absolute;
+      width: 50%;
+      top: -22%;
+      right: -6.5rem;
+    }
     .hero-content {
-      grid-template-columns: 375px;
+      justify-self: start;
+      justify-items: start;
+      text-align: left;
       order: 1;
-      align-self: center;
     }
   }
 }

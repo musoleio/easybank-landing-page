@@ -83,34 +83,36 @@ $primary-colors: (
   }
 }
 
-.hero-image-container {
-  position: relative;
+.hero-section {
+  background-image: url("./../images/bg-intro-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+}
 
-  .hero-image {
-    width: 100%;
-    background-image: url("./../images/bg-intro-mobile.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-  }
+.hero-image-container {
+  // border: 2px solid yellowgreen;
+}
+
+.hero-image {
+  // display: none;
+  width: 100%;
+  position: relative;
+  bottom: 5.6rem;
 }
 
 .hero-content {
-  & > * {
-    max-width: 375px;
-  }
-
   display: grid;
+  grid-template-columns: 375px;
   justify-content: center;
   text-align: center;
-  padding: 3em 1em;
+  padding: 0 1em 2em;
   gap: 1em;
 
   .main-heading {
     color: map-get($primary-colors, darkblue);
     font-weight: 300;
     font-size: 2rem;
-    // margin-bottom: 0.35em;
   }
 
   .hero-desc {
@@ -121,7 +123,7 @@ $primary-colors: (
   }
 
   .cta {
-    justify-self: center;
+    // justify-self: center;
     color: #fff;
   }
 }
